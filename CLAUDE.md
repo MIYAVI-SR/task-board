@@ -4,11 +4,44 @@
 
 React + Vite で構築したタスク管理ボードアプリケーション。
 
+## デプロイ先
+
+https://miyavi-sr.github.io/task-board/
+
+`main` ブランチへのプッシュで GitHub Actions が自動ビルド・デプロイする。
+
 ## 技術スタック
 
-- **フロントエンド**: React 19
-- **ビルドツール**: Vite 8
-- **言語**: JavaScript (JSX)
+| カテゴリ | 技術 | バージョン |
+|---------|------|-----------|
+| UI ライブラリ | React | 19 |
+| ビルドツール | Vite | 8 |
+| 言語 | JavaScript (JSX) | ES2022+ |
+| スタイル | Plain CSS (CSS Modules なし) | — |
+| 状態管理 | React 組み込み (`useState`, `useEffect`) | — |
+| 永続化 | `localStorage` | — |
+| CI/CD | GitHub Actions | — |
+| ホスティング | GitHub Pages | — |
+
+## コンポーネント命名規約
+
+### ファイル・コンポーネント名
+
+- コンポーネントファイルは **PascalCase** で命名する（例: `TaskItem.jsx`）
+- 1ファイル1コンポーネントを原則とする
+- コンポーネント名とファイル名は一致させる
+
+### CSS クラス名
+
+- クラス名は **kebab-case** で命名する（例: `.task-item`, `.delete-btn`）
+- コンポーネント単位でスコープを持たせ、グローバルな汚染を避ける
+- 状態を表すクラスは状態名をそのまま使う（例: `.done`, `.active`）
+
+### 変数・関数名
+
+- 変数・関数は **camelCase**（例: `addTask`, `toggleTask`）
+- イベントハンドラは `handle` プレフィックス（例: `handleKeyDown`）
+- ブール値は `is` / `has` プレフィックス（例: `isDone`, `hasError`）
 
 ## 開発環境のセットアップ
 
